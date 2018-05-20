@@ -19,6 +19,8 @@ set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :rvm_custom_path, '/usr/share/rvm'
+
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, false  # Change to true if using ActiveRecord
@@ -80,7 +82,7 @@ namespace :deploy do
       execute :mkdir, '-p', shared_path
       upload! 'config/database.yml', "#{shared_path}/config"
       upload! 'config/secrets.yml',  "#{shared_path}/config"
-      upload! '.env',                "#{shared_path}/config"
+      upload! '.env',                "#{shared_path}"
     end
   end
 
@@ -88,8 +90,6 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
-
-  before :initial,      :upload_config_files
 end
 
 # ps aux | grep puma    # Get puma pid
