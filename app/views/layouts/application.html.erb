@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Sirarpy</title>
     <%= csrf_meta_tags %>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>My hand</title>
+
+    <!-- Fav and touch icons -->
+    <%= favicon_link_tag 'ico/apple-touch-icon-144.png', rel: 'apple-touch-icon-precomposed', sizes: '144x144' %>
+    <%= favicon_link_tag 'ico/apple-touch-icon-114.png', rel: 'apple-touch-icon-precomposed', sizes: '114x114' %>
+    <%= favicon_link_tag 'ico/apple-touch-icon-72.png', rel: 'apple-touch-icon-precomposed', sizes: '72x72' %>
+    <%= favicon_link_tag 'ico/apple-touch-icon-57.png', rel: 'apple-touch-icon-precomposed' %>
+    <%= favicon_link_tag 'ico/favicon.ico' %>
+
+    <!-- Load css styles -->
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!--[if IE 7]>
+        <link rel="stylesheet" type="text/css" href="/assets/pluton-ie7.css" />
+        <%= stylesheet_link_tag 'pluton-ie7', media: 'all' %>
+    <![endif]-->
   </head>
 
   <body>
     <%= yield %>
+
+    <!-- Include javascript -->
+    <%= javascript_include_tag 'application' %>
+    <!-- Load google maps api and call initializeMap function defined in app.js -->
+    <script async="" defer="" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap"></script>
+    <!-- css3-mediaqueries.js for IE8 or older -->
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag 'respond.min' %>
+    <![endif]-->
+    <%= javascript_include_tag 'app' %>
   </body>
 </html>

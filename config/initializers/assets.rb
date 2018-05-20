@@ -12,3 +12,43 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+Rails.application.config.assets.precompile += %w(
+  application.css
+
+  google-fonts-roboto.css
+  animate.css
+  bootstrap.css
+  bootstrap-responsive.css
+  jquery.bxslider.css
+  jquery.cslider.css
+  pluton.css
+  pluton-ie7.css
+  style.css
+
+  welcome.css
+)
+
+Rails.application.config.assets.precompile += %w(
+  application.js
+
+  jquery.js
+  jquery.mixitup.js
+  bootstrap.js
+  modernizr.custom.js
+  jquery.bxslider.js
+  jquery.cslider.js
+  jquery.placeholder.js
+  jquery.inview.js
+  respond.min.js
+  app.js
+
+  welcome.js
+)
+
+Rails.application.config.assets.precompile += %w(
+  pluton.eot
+  fonts/pluton.svg
+  fonts/pluton.ttf
+  fonts/pluton.woff
+)
