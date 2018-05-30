@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526134830) do
+ActiveRecord::Schema.define(version: 20180530141743) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -67,4 +67,30 @@ ActiveRecord::Schema.define(version: 20180526134830) do
     t.index ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true
   end
 
+  create_table "languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "language"
+    t.integer "position", default: 1
+    t.boolean "published", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language"], name: "index_languages_on_language", unique: true
+  end
+
+  create_table "sliders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "sub_title"
+    t.text "description"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "position", default: 1
+    t.boolean "published", default: true
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_sliders_on_language_id"
+  end
+
+  add_foreign_key "sliders", "languages"
 end

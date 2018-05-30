@@ -1,0 +1,450 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  activerecord:
+    models:
+      admin_user:
+        one: Администратор
+        few: администратора
+        many: администраторов
+        other: Администраторы
+      message:
+        one: "Сообщения"
+        few: "сообщения"
+        many: "сообщений"
+        other: "Сообщения"
+      image:
+        one: "Изображение"
+        few: "Изображения"
+        many: "Изображений"
+        other: "Изображения"
+      page:
+        one: "Страница"
+        few: "Страница"
+        many: "Страниц"
+        other: "Страницы"
+      main_page:
+        one: "Общую"
+        few: "Общих"
+        many: "Общих"
+        other: "Общие"
+      person:
+        one: "Сотрудник"
+        few: "сотрудника"
+        many: "сотрудников"
+        other: "Сотрудники"
+      order:
+        one: "Заказ"
+        few: "заказа"
+        many: "заказов"
+        other: "Заказы"
+      setting:
+        one: "Настройка"
+        few: "настройки"
+        many: "настроек"
+        other: "Настройки"
+      cap:
+        one: Заглушку
+        few: заглушек
+        many: заглушек
+        other: Заглушки
+      social_network:
+        one: Соцсеть
+        few: соцсети
+        many: соцсетей
+        other: Соцсети
+      region:
+        one: Регион
+        few: региона
+        many: регионов
+        other: Регионы
+      seo:
+        one: Мета-тэг
+        few: мета-тэга
+        many: мета-тэгов
+        other: Мета-тэги
+      product:
+        one: Рукоделие
+        few: Рукоделий
+        many: Рукоделий
+        other: Рукоделия
+      slider:
+        one: Слайд
+        few: Слайдов
+        many: Слайдов
+        other: Слайды
+    attributes:
+      product:
+        title: "Заголовок"
+        description: Описание
+        info: Информация
+        price: Цена
+        image: Картинка
+        position: Позиция
+        published: Опубликовано
+      page:
+        title: "Заголовок"
+        alias: "Псевдоним"
+        parent_id: "Родительская страница"
+        introtext: "Краткий текст"
+        text: "Содержимое"
+        published: "Опубликовано"
+        position: "Позиция в списке"
+        template: "Шаблон страницы"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+        cached_url: "Полный путь"
+        images_uploads: "Галерея"
+        longtitle: "Длинный заголовок"
+        person: "Сотрудник"
+        person_id: "Сотрудник"
+        meta_title: "Title страницы"
+        meta_description: "META-тэг description"
+      main_page:
+        title: "Заголовок"
+        title_description: "Под заголовок"
+        two_col_title: Втарой заголовок
+        two_col_title description: Описание
+        two_col_one_txt: Левый текст
+        two_col_two_txt: Правый текст
+
+        three_col_title: Заголовок
+        three_col_title_description: Описание
+        three_col_one_txt: Первый текст
+        three_col_two_txt: Втарой текст
+        three_col_three_txt: Третий текст
+        info_title: Заголовок
+        info_title_description: Описание
+        testimonials_title: Заголовок
+        testimonials_title_description: Описание
+        testimonials_text_1: Первый текст
+        testimonials_text_2: Втарой текст
+        testimonials_text_3: Третий текст
+        testimonials_text_4: Четвертый текст
+        published: Опубликовано
+      admin_user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        is_admin: "Администратор"
+        is_dealer: "Риелтор"
+        last_sign_in_at: "Дата последнего входа"
+        created_at: "Дата регистрации"
+        remember_me: "Запомнить меня"
+        name: "Имя"
+        name2: "Фамилия"
+        name3: "Отчество"
+        company: "Компания"
+        phone: "Телефон"
+        address: "Адрес"
+        city_id: "Город"
+        city: "Город"
+      message:
+        name: "Имя и фамилия"
+        email: "Электронная почта"
+        phone: "Номер телефона"
+        text: "Сообщение"
+        message_type: "Тип сообщения"
+        ip: "IP-адрес"
+        created_at: "Дата и время отправки"
+        url: "Страница, с которой отправлен вопрос"
+      image:
+        title: "Название"
+        image: "Изображение"
+        imageable: "Объект"
+        position: "Позиция в списке"
+        published: "Опубликовано"
+        imageable_id: "Номер объекта"
+        imageable_type: "Тип объекта"
+        location: "Тип фотографии"
+      person:
+        name: "Имя и отчество"
+        post: "Должность"
+        phone: "Телефон"
+        email: "Электронная почта"
+        position: "Порядок в списке"
+        published: "Опубликован"
+        image: "Фотография"
+        about: О сотруднике
+      order:
+        name: "Имя и фамилия"
+        email: "Электронная почта"
+        phone: "Номер телефона"
+        text: "Текст"
+        apartment: "Квартира"
+        apartment_id: "Квартира"
+        status: "Статус"
+        ip: "IP-адрес"
+        created_at: "Дата и время отправки"
+        payment: "Оплата"
+        user: "Риелтор"
+        customer_passport: "Паспортные данные"
+        address: "Адрес доставки"
+      setting:
+        title: "Заголовок"
+        key: "Код"
+        value: "Значение"
+        image: "Файл"
+        content: "Текст"
+      cap:
+        background_img: Главный фон
+        title: Заголовок
+        description: Описание
+        intro:
+        intro_img: Изображение
+        intro_text: Текст
+        work:
+        work_img: Изображение
+        work_text: Текст
+        about: О Нас
+        about_img: Изображение
+        about_text: Текст
+        published: Опубликовано
+      social_network:
+        title: Название
+        class_fa: Стиль иконки
+        icon: Иконка
+        url: Сайт
+        position: Порядок в списке
+        published: Опубликован
+      region:
+        title: Название
+        phone: Телефон
+        address: Адрес
+        lat: Координаты
+        lng: Координаты
+        zoom: Масштаб карты
+        map_type: Тип карты
+        worktime: Часы работы
+        free_delivery_cost: Минимальная стоимость для бесплатной доставки
+        time_zone: Часовой пояс
+        delivery_text: Текст о доставке
+        chairs_repair: Ремонт кресел
+        published: Опубликовано
+        position: Порядок в списке
+        delivery_cost: Цена платной доставки
+      seo:
+        title: Название
+        keywords: Ключевые слова
+        description: Описание
+        seoable: Объект
+        seoable_type: Тип объекта
+        seoable_id: Идентификатор объекта
+        created_at: Создан
+  active_admin:
+    scopes:
+      all: "Все"
+      sent: "Отправленные"
+      ordered: "Заказанные"
+      available: "Доступные"
+      news: "Новые"
+      future: "Предстоящие"
+      current: "Текущие"
+      past: "Прошедшие"
+      unconfirmed: "Не принятые"
+      confirmed: "Принятые"
+      cancelled: "Надо удалить"
+      prolonged: "Надо продлить"
+      sold: "Проданные"
+    dashboard: "Панель управления"
+    dashboard_welcome:
+      welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
+      call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboard.rb'"
+    view: "Открыть"
+    edit: "Изменить"
+    delete: "Удалить"
+    delete_confirmation: "Вы уверены, что хотите удалить это?"
+
+    comments: "Комментарий"
+    comment: "Комментарий"
+    create_model: "Добавить объект"
+    new_model: "Создать %{model}"
+    edit_model: "Изменить %{model}"
+    update_model: "Изменить %{model}"
+    delete_model: "Удалить %{model}"
+
+    details: "%{model} подробнее"
+    cancel: "Отмена"
+    empty: "Пусто"
+    previous: "Пред."
+    next: "След."
+    download: "Загрузка:"
+    has_many_new: "Добавить %{model}"
+    has_many_delete: "Удалить"
+    has_many_remove: "Убрать"
+    filters:
+      buttons:
+        filter: "Фильтровать"
+        clear: "Очистить"
+      predicates:
+        contains: "Содержит"
+        equals: "Равно"
+        starts_with: "Начинается с"
+        ends_with: "Заканчивается"
+        greater_than: "больше"
+        less_than: "меньше"
+    search_status:
+      headline: "Статус поиска:"
+      current_scope: "Область:"
+      current_filters: "Текущий фильтр:"
+      no_current_filters: "Ни один"
+    status_tag:
+      "yes": "Да"
+      "no": "Нет"
+    main_content: "Создайте %{model}#main_content для отображения содержимого."
+    logout: "Выйти"
+    powered_by: "Работает на %{active_admin} %{version}"
+    sidebars:
+      filters: "Фильтры"
+      search_status: "Статус поиска"
+    pagination:
+      empty: "%{model} не найдено"
+      one: "Результат: <b>1</b> %{model}"
+      one_page: "Результат: <b>%{n}</b> %{model}"
+      multiple: "Результат: %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{total}</b>"
+      multiple_without_total: "Результат: %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>"
+      entry:
+        one: "запись"
+        few: "записи"
+        many: "записей"
+        other: "записей"
+    any: "Любой"
+    blank_slate:
+      content: "Пока нет %{resource_name}."
+      link: "Создать"
+    dropdown_actions:
+      button_label: "Oперации"
+    batch_actions:
+      button_label: "Групповые операции"
+      default_confirmation: "Вы уверены, что вы хотите это сделать?"
+      delete_confirmation: "Вы уверены, что хотите удалить %{plural_model}?"
+      succesfully_destroyed:
+        one: "Успешно удалено: 1 %{model}"
+        few: "Успешно удалено: %{count} %{plural_model}"
+        many: "Успешно удалено: %{count} %{plural_model}"
+        other: "Успешно удалено: %{count} %{plural_model}"
+      selection_toggle_explanation: "(Отметить всё / Снять выделение)"
+      action_label: "%{title} выбранное"
+      labels:
+        destroy: "Удалить"
+    comments:
+      created_at: "Дата создания"
+      resource_type: "Тип ресурса"
+      author_type: "Тип автора"
+      body: "Текст"
+      author: "Автор"
+      add: "Добавить Комментарий"
+      delete: "Удалить Комментарий"
+      delete_confirmation: "Вы уверены, что хотите удалить этот комментарий?"
+      resource: "Ресурс"
+      no_comments_yet: "Пока нет комментариев."
+      author_missing: "Аноним"
+      title_content: "Комментарии (%{count})"
+      errors:
+        empty_text: "Комментарий не сохранен, текст не должен быть пустым."
+    devise:
+      username:
+        title: "Имя пользователя"
+      email:
+        title: "Эл. почта"
+      subdomain:
+        title: "Поддомен"
+      password:
+        title: "Пароль"
+      sign_up:
+        title: "Зарегистрироваться"
+        submit: "Зарегистрироваться"
+      login:
+        title: "Войти"
+        remember_me: "Запомнить меня"
+        submit: "Войти"
+      reset_password:
+        title: "Забыли пароль?"
+        submit: "Сбросить пароль"
+      change_password:
+        title: "Изменение пароля"
+        submit: "Изменение пароля"
+      unlock:
+        title: "Повторно отправить инструкции по разблокировке"
+        submit: "Повторно отправить инструкции по разблокировке"
+      resend_confirmation_instructions:
+        title: "Выслать повторно письмо с активацией"
+        submit: "Выслать повторно письмо с активацией"
+      links:
+        sign_up: "Зарегистрироваться"
+        sign_in: "Войти"
+        forgot_your_password: "Забыли пароль?"
+        sign_in_with_omniauth_provider: "Войти с помощью %{provider}"
+        resend_unlock_instructions: "Повторная отправка инструкций разблокировки"
+        resend_confirmation_instructions: "Повторная отправка инструкций подтверждения"
+    unsupported_browser:
+      headline: "Пожалуйста, обратите внимание, что Active Admin больше не поддерживает старые версии Internet Explorer начиная с версии IE 8"
+      recommendation: "Мы рекомендуем обновить версию вашего браузера (<a href=\"http://windows.microsoft.com/ie\">Internet Explorer</a>, <a href=\"https://chrome.google.com/\">Google Chrome</a>, или <a href=\"https://mozilla.org/firefox/\">Firefox</a>)."
+      turn_off_compatibility_view: "Если вы используете IE 9 или новее, убедитесь, что <a href=\"https://support.microsoft.com/ru-ru/help/17471\">вы выключили опцию \"Просмотр в режиме совместимости\"</a>."
+    access_denied:
+      message: "Вы не авторизованы для выполнения данного действия."
+    index_list:
+      table: "Таблица"
+      block: "Список"
+      grid: "Сетка"
+      blog: "Блог"
+
+  date:
+    formats:
+      news_date: "%d %B %Y"
+      short_date: "%d %B"
+      month_date: "%B %Y"
+      year: "%Y"
+      short_wd: " %A, %d %B"
+      digits: "%d.%m.%Y"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
+      short_wd: " %A, %d %B"
+      short_wdh: " %A, %d %B %H:%I"
+      news_date: "%d %B %Y"
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&larr; Предыдущая"
+      next: "Следующая &rarr;"
+      truncate: "…"
+  number:
+    currency:
+       format:
+         unit: '<span class="rub">a</span>'
+         delimiter: '<span class="min-space"></span>'
+         separator: ','
+         precision: 0
+         format: '%n<span class="min-space"></span>%u'

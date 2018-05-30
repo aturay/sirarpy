@@ -27,5 +27,8 @@ module Sirarpy
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    I18n.available_locales = [:en, :de, :ru, :am]
+    I18n.default_locale = :en
   end
 end

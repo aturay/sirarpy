@@ -12,13 +12,13 @@
             <!-- Main navigation -->
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav" id="top-navigation">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#service">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#clients">Clients</a></li>
-                    <li><a href="#price">Price</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="active"><a href="#home"><%= t :home %></a></li>
+                    <li><a href="#service"><%= t :services %></a></li>
+                    <li><a href="#portfolio"><%= t :portfolio %></a></li>
+                    <li><a href="#about"><%= t :about %></a></li>
+                    <li><a href="#clients"><%= t :clients %></a></li>
+                    <li><a href="#price"><%= t :price %></a></li>
+                    <li><a href="#contact"><%= t :contact %></a></li>
                 </ul>
             </div>
             <!-- End main navigation -->
@@ -34,39 +34,19 @@
         <div class="mask"></div>
         <!-- All slides centred in container element -->
         <div class="container">
-            <!-- Start first slide -->
-            <div class="da-slide">
-                <h2 class="fittext2">Welcome to pluton theme</h2>
-                <h4>Clean & responsive</h4>
-                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                <a href="#" class="da-link button">Read more</a>
-                <div class="da-img">
-                    <img src="<%= image_path 'Slider01.png' %>" alt="image01" width="320">
+            <% @sliders.each do |item| %>
+                <!-- Start first slide -->
+                <div class="da-slide">
+                    <h2 class="fittext2"><%= item.title %></h2>
+                    <h4><%= item.sub_title %></h4>
+                    <p><%= item.description %></p>
+                    <a href="#" class="da-link button"><%= t :button_read_more %></a>
+                    <div class="da-img">
+                        <%= image_tag item.image.url(:medium), width: "320" %>
+                    </div>
                 </div>
-            </div>
-            <!-- End first slide -->
-            <!-- Start second slide -->
-            <div class="da-slide">
-                <h2>Easy management</h2>
-                <h4>Easy to use</h4>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <a href="#" class="da-link button">Read more</a>
-                <div class="da-img">
-                    <img src="<%= image_path 'Slider02.png' %>" width="320" alt="image02">
-                </div>
-            </div>
-            <!-- End second slide -->
-            <!-- Start third slide -->
-            <div class="da-slide">
-                <h2>Revolution</h2>
-                <h4>Customizable</h4>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="da-link button">Read more</a>
-                <div class="da-img">
-                    <img src="<%= image_path 'Slider03.png' %>" width="320" alt="image03">
-                </div>
-            </div>
-            <!-- Start third slide -->
+                <!-- End first slide -->
+            <% end %>
             <!-- Start cSlide navigation arrows -->
             <div class="da-arrows">
                 <span class="da-arrows-prev"></span>
