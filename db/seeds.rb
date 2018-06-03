@@ -50,3 +50,34 @@ Slider.create!([
     position: 3,
     published: true
   } ])
+
+p 'WeDo EN created!'
+WeDo.create!([
+  {
+    language: en,
+    title: 'Modern Design',
+    description: 'We Create Modern And Clean Theme For Your Business Company.',
+    icon: open( "#{Rails.root}/app/assets/images/Service1.png" ),
+    position: 1,
+    published: true
+  }, {
+    language: en,
+    title: 'Powerfull Theme',
+    description: 'We Create Modern And Powerful Theme With Lots Animation And Features',
+    icon: open( "#{Rails.root}/app/assets/images/Service2.png" ),
+    position: 2,
+    published: true
+  }, {
+    language: en,
+    title: 'Clean Code',
+    description: 'We Create Modern And Powerful Html5 And CSS3 Code Easy For Read And Customize.',
+    icon: open( "#{Rails.root}/app/assets/images/Service3.png" ),
+    position: 3,
+    published: true
+  }
+])
+
+
+
+
+

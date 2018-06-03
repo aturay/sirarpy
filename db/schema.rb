@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530141743) do
+ActiveRecord::Schema.define(version: 20180603000721) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -92,5 +92,21 @@ ActiveRecord::Schema.define(version: 20180530141743) do
     t.index ["language_id"], name: "index_sliders_on_language_id"
   end
 
+  create_table "we_dos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "description"
+    t.string "icon_file_name"
+    t.string "icon_content_type"
+    t.integer "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.integer "position", default: 1
+    t.boolean "published", default: true
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_we_dos_on_language_id"
+  end
+
   add_foreign_key "sliders", "languages"
+  add_foreign_key "we_dos", "languages"
 end

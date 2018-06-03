@@ -1,6 +1,6 @@
 ActiveAdmin.register Slider do
   menu parent: 'Settings'
-  permit_params :title, :sub_title, :description, :image, :position, :published, :language
+  permit_params :title, :sub_title, :description, :image, :position, :published, :language_id
 
   index do
     selectable_column
@@ -21,7 +21,7 @@ ActiveAdmin.register Slider do
     actions
   end
 
-  filter :language, as: :select, collection: proc{ Language.languages }
+  filter :language, as: :select, collection: proc{ Language.collection }
   filter :title
   filter :sub_title
   filter :description
@@ -31,13 +31,13 @@ ActiveAdmin.register Slider do
 
   form do |f|
     f.inputs do
+      f.input :language, as: :select, collection: Language.collection, include_blank: false
       f.input :title
       f.input :sub_title
       f.input :description
       f.input :image, hint: '320X320'
       f.input :position, input_html: {value: (f.object.position <= 1 ? Slider.maximum(:position) + 1 : f.object.position )}
       f.input :published
-      f.input :language
     end
     actions
   end

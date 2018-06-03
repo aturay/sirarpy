@@ -17,4 +17,8 @@ class Language < ApplicationRecord
   def self.default
     self.find_by_language 'en'
   end
+
+  def self.collection
+    self.all.map { |l| [l.language, l.id] }
+  end
 end
