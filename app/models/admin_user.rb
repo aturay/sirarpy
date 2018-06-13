@@ -22,7 +22,16 @@
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  role                   :integer          default("seller"), not null
+#  role                   :integer          default("master"), not null
+#  firstname              :string(255)
+#  lastname               :string(255)
+#  phone                  :string(255)
+#  addres                 :text(65535)
+#  social_url             :string(255)
+#  picture_file_name      :string(255)
+#  picture_content_type   :string(255)
+#  picture_file_size      :integer
+#  picture_updated_at     :datetime
 #
 
 class AdminUser < ApplicationRecord
@@ -32,4 +41,20 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable,
          :timeoutable #,:confirmable, :lockable
+
+  has_many :productis
+
+  has_attached_file :picture,
+    styles: {
+      medium: "640x640>",
+      avatar: "200x245>",
+      thumb: "100x100>"},
+    default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
+
+  scope :collection, -> {all.map {|m| [m.full_name, m.id]}}
+
+  def full_name
+    "#{self.firstname} #{self.lastname}"
+  end
 end

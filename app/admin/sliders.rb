@@ -1,5 +1,6 @@
 ActiveAdmin.register Slider do
   menu parent: 'Settings'
+
   permit_params :title, :sub_title, :description, :image, :position, :published, :language_id
 
   index do

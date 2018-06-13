@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 p 'AdminUsers created!'
-%i[seller staff manager admin].each do |role|
+%i[master manager admin].each do |role|
   %i[gorcim.com sirarpy.com].each do |host|
     AdminUser.find_or_create_by!(email: "#{role}@#{host}") do |admin_user|
       admin_user.role = role
@@ -78,6 +78,50 @@ WeDo.create!([
 ])
 
 
+p 'Type EN created'
+Type.create!([
+  {
+    title: 'Clay',
+    language:    en,
+    description: '',
+    # image: '',
+    position:    1,
+    published:   true
+  }, {
+    title: 'Paper',
+    language:    en,
+    description: '',
+    # image: '',
+    position:    2,
+    published:   true
+  }, {
+    title: 'Ceramic',
+    language:    en,
+    description: '',
+    # image: '',
+    position:    3,
+    published:   true
+  }, {
+    title: 'Glass',
+    language:    en,
+    description: '',
+    # image: '',
+    position:    4,
+    published:   true
+  }, {
+    title: 'Wood',
+    language:    en,
+    description: '',
+    # image: '',
+    position:    5,
+    published:   true
+  }
+])
 
+p 'Product EN created'
+Product.create([
+  {
 
+  },
+])
 

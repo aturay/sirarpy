@@ -9,8 +9,9 @@
 #  icon_content_type :string(255)
 #  icon_file_size    :integer
 #  icon_updated_at   :datetime
-#  position          :integer
-#  published         :boolean
+#  position          :integer          default(1)
+#  published         :boolean          default(TRUE)
+#  language_id       :bigint(8)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #

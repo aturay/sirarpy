@@ -86,6 +86,22 @@ namespace :deploy do
     end
   end
 
+  desc 'Resset database'
+  task :resset do
+    on roles(:db) do
+      within release_path do
+        with rails_env: fetch(:stage) do
+          # execute :rake, 'db:schema:load'
+          execute :rake, 'db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1'
+          execute :rake, 'db:create'
+          execute :rake, 'db:migrate'
+          execute :rake, 'assets:precompile'
+          execute :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
   before :starting, :check_revision
 end
 

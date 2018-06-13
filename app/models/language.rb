@@ -12,6 +12,9 @@
 
 class Language < ApplicationRecord
   has_many :sliders
+  has_many :types
+  has_many :products
+
   enum language: [:en, :de, :ru, :am]
 
   def self.default

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180603000721) do
+ActiveRecord::Schema.define(version: 20180603225629) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 20180603000721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", limit: 1, default: 0, null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.string "phone"
+    t.text "addres"
+    t.string "social_url"
+    t.string "picture_file_name"
+    t.string "picture_content_type"
+    t.integer "picture_file_size"
+    t.datetime "picture_updated_at"
     t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
@@ -74,6 +83,35 @@ ActiveRecord::Schema.define(version: 20180603000721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language"], name: "index_languages_on_language", unique: true
+  end
+
+  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "position", default: 1
+    t.boolean "published", default: true
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "description"
+    t.text "owerview"
+    t.integer "price"
+    t.bigint "type_id"
+    t.bigint "admin_user_id"
+    t.bigint "language_id"
+    t.boolean "published", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_user_id"], name: "index_products_on_admin_user_id"
+    t.index ["language_id"], name: "index_products_on_language_id"
+    t.index ["type_id"], name: "index_products_on_type_id"
   end
 
   create_table "sliders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,6 +130,21 @@ ActiveRecord::Schema.define(version: 20180603000721) do
     t.index ["language_id"], name: "index_sliders_on_language_id"
   end
 
+  create_table "types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "description"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "position", default: 1
+    t.boolean "published", default: true
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_types_on_language_id"
+  end
+
   create_table "we_dos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "description"
@@ -107,6 +160,11 @@ ActiveRecord::Schema.define(version: 20180603000721) do
     t.index ["language_id"], name: "index_we_dos_on_language_id"
   end
 
+  add_foreign_key "product_images", "products"
+  add_foreign_key "products", "admin_users"
+  add_foreign_key "products", "languages"
+  add_foreign_key "products", "types"
   add_foreign_key "sliders", "languages"
+  add_foreign_key "types", "languages"
   add_foreign_key "we_dos", "languages"
 end
