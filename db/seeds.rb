@@ -125,3 +125,7 @@ Product.create([
   },
 ])
 
+p 'Setting created'
+Setting.create([{
+  logo: open( "#{Rails.root}/app/assets/images/logo.png" )
+}])

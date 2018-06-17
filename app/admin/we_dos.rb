@@ -1,5 +1,5 @@
 ActiveAdmin.register WeDo do
-  menu parent: 'Settings'
+  # menu parent: 'Settings'
   permit_params :title, :description, :icon, :language_id, :position, :published
 
   index do

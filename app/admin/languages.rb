@@ -1,5 +1,5 @@
 ActiveAdmin.register Language do
-  menu parent: 'Settings'
+  # menu parent: 'Settings'
 
   permit_params :language, :position, :published
 
