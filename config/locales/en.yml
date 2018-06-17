@@ -25,6 +25,8 @@ en:
         position: Position
         published: Published
 
+  # title
+  title: Sirarpy
 
   # Menu
   home: Home
