@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: settings
+#
+#  id                :bigint(8)        not null, primary key
+#  logo_file_name    :string(255)
+#  logo_content_type :string(255)
+#  logo_file_size    :integer
+#  logo_updated_at   :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 class Setting < ApplicationRecord
   has_attached_file :logo,
     styles: {

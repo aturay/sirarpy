@@ -32,6 +32,7 @@
 #  picture_content_type   :string(255)
 #  picture_file_size      :integer
 #  picture_updated_at     :datetime
+#  staff                  :boolean          default(FALSE)
 #
 
 class AdminUser < ApplicationRecord
@@ -47,12 +48,14 @@ class AdminUser < ApplicationRecord
   has_attached_file :picture,
     styles: {
       medium: "640x640>",
+      public: "400x400>",
       avatar: "200x245>",
       thumb: "100x100>"},
     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   scope :collection, -> {all.map {|m| [m.full_name, m.id]}}
+  scope :staffs, -> { where staff: true }
 
   def full_name
     "#{self.firstname} #{self.lastname}"

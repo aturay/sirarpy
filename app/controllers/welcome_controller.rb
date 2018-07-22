@@ -6,5 +6,6 @@ class WelcomeController < ApplicationController
                        .where(language: current_language, published: true)
                        .uniq
     @types    = @products.map { |prd| prd.type }.uniq
+    @staffs   = AdminUser.staffs
   end
 end

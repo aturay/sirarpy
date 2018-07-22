@@ -2,7 +2,8 @@ ActiveAdmin.register AdminUser do
   role_changeable
   permit_params :email, :password, :password_confirmation,
                 :full_name, :firstname, :lastname, :email,
-                :phone, :addres, :social_url, :picture, :published
+                :phone, :addres, :social_url, :picture, :published,
+                :staff
 
   index do
     selectable_column
@@ -11,6 +12,7 @@ ActiveAdmin.register AdminUser do
     column :picture do |obj|
       image_tag obj.picture.url(:thumb)
     end
+    column :staff
     column :email
     column :current_sign_in_at
     column :sign_in_count
@@ -19,6 +21,7 @@ ActiveAdmin.register AdminUser do
   end
 
   filter :email
+  filter :staff
   filter :current_sign_in_at
   filter :sign_in_count
   filter :created_at
@@ -32,6 +35,7 @@ ActiveAdmin.register AdminUser do
       f.input :addres, input_html: {rows: 7}
       f.input :social_url
       f.input :picture
+      f.input :staff
       f.input :password
       f.input :password_confirmation
     end
