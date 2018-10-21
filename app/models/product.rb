@@ -38,6 +38,8 @@ class Product < ApplicationRecord
   end
 
   def uploads=(files)
+    return if self.new_record?
+
     files.each_with_index do |file, i|
       ProductImage.create([{
         image:    file,

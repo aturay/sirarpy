@@ -10,6 +10,10 @@ ActiveAdmin.register Product do
     product.admin_user = current_admin_user
   end
 
+  after_create do |product|
+    product.uploads = params[:product][:uploads]
+  end
+
   controller do
     def create
       super do |format|
