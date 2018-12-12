@@ -10,7 +10,7 @@ ActiveAdmin.register AdminUser do
     id_column
     column :full_name
     column :picture do |obj|
-      image_tag obj.picture.url(:thumb)
+      image_tag obj.picture(:thumb)
     end
     column :staff
     column :email
