@@ -51,7 +51,7 @@ class AdminUser < ApplicationRecord
       public: "400x400>",
       avatar: "200x245>",
       thumb: "100x100>"},
-    default_url: "/images/:style/missing.png"
+    default_url: "/assets/Portfolio01.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   scope :collection, -> {all.map {|m| [m.full_name, m.id]}}

@@ -160,37 +160,37 @@
             <p><%= t :wwa_description %></p>
         </div>
 
-        <% @staffs.each do |user| %>
-            <div class="row-fluid team">
-                <div class="span4" id="first-person">
-                    <div class="thumbnail">
-                        <%= image_tag user.picture(:public) %>
-                        <h3><%= user.full_name %></h3>
-                        <ul class="social">
-                            <li>
-                                <a href="">
-                                    <span class="icon-facebook-circled"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon-twitter-circled"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="icon-linkedin-circled"></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="mask">
-                            <h2>Copywriter</h2>
-                            <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
-                        </div>
-                    </div>
+        <div class="row-fluid team">
+          <% @staffs.each do |user| %>
+            <div class="span4" id="first-person">
+              <div class="thumbnail">
+                <%= image_tag user.picture(:public) %>
+                <h3><%= user.full_name %></h3>
+                <ul class="social">
+                  <li>
+                    <a href="">
+                      <span class="icon-facebook-circled"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span class="icon-twitter-circled"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                        <span class="icon-linkedin-circled"></span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="mask">
+                  <h2>Copywriter</h2>
+                  <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
                 </div>
+              </div>
             </div>
-        <% end %>
+          <% end %>
+        </div>
 
         <div class="about-text centered">
             <h3><%= t :about_us %></h3>
