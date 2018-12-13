@@ -58,3 +58,8 @@ en:
 
   # Skills
   skills: Skills
+
+  # Contact us
+  contact_us: Contact Us
+  cu_description: Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.
+  form_title: Say Hello
