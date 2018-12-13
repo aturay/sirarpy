@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180721214128) do
+ActiveRecord::Schema.define(version: 20181213003535) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20180721214128) do
     t.bigint "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "progress"
     t.index ["language_id"], name: "index_types_on_language_id"
   end
 

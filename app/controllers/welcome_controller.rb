@@ -7,5 +7,8 @@ class WelcomeController < ApplicationController
                        .uniq
     @types    = @products.map { |prd| prd.type }.uniq
     @staffs   = AdminUser.staffs
+    @skills   = Type.where(language: current_language)
+                    .where(published: true)
+                    .order(position: :asc)
   end
 end

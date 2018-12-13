@@ -14,6 +14,7 @@
 #  language_id        :bigint(8)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  progress           :integer
 #
 
 class Type < ApplicationRecord

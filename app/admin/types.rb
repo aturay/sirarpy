@@ -1,7 +1,8 @@
 ActiveAdmin.register Type do
   menu parent: 'Products', priority: 1 if proc{ current_user.can_edit_posts? }
 
-  permit_params :title, :description, :image, :position, :published, :language_id
+  permit_params :title, :description, :image, :position, :published, :language_id,
+                :progress
 
   actions :all, except: [:show]
 
@@ -29,8 +30,9 @@ ActiveAdmin.register Type do
     column :title
     column :description
     column :image
-    column :position
     column :published
+    column :position
+    column :progress
 
     actions
   end
@@ -40,6 +42,7 @@ ActiveAdmin.register Type do
   filter :description
   filter :position
   filter :published
+  filter :progress
 
 
   form do |f|
@@ -48,8 +51,9 @@ ActiveAdmin.register Type do
       f.input :title
       f.input :description
       f.input :image, hint: '320X320'
-      f.input :position, input_html: {value: (f.object.position <= 1 ? Type.maximum(:position) + 1 : f.object.position )}
       f.input :published
+      f.input :position, input_html: {value: (f.object.position <= 1 ? Type.maximum(:position) + 1 : f.object.position )}
+      f.input :progress, input_html: {step: 10, min: 0, max: 100}
     end
     actions
   end
