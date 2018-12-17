@@ -1,22 +1,22 @@
-<form id="contact-form" action="php/mail.php">
+<%= form_for Message.new, html: {id: "contact-form", class: 'form'} do |f| %>
   <!-- name -->
   <div class="control-group">
     <div class="controls">
-      <input class="span12" type="text" id="name" name="name" placeholder="* Your name..." />
+      <%= text_field :customer, :name, class: 'span12', placeholder: t(:placeholder_name) %>
       <div class="error left-align" id="err-name">Please enter name.</div>
     </div>
   </div>
   <!-- email -->
   <div class="control-group">
     <div class="controls">
-      <input class="span12" type="email" name="email" id="email" placeholder="* Your email..." />
+      <%= text_field :customer, :email, class: 'span12', placeholder: t(:placeholder_email) %>
       <div class="error left-align" id="err-email">Please enter valid email adress.</div>
     </div>
   </div>
   <!-- comment -->
   <div class="control-group">
     <div class="controls">
-      <textarea class="span12" name="comment" id="comment" placeholder="* Comments..."></textarea>
+      <%= f.text_area :message, class: 'span12', placeholder: t(:placeholder_comments) %>
       <div class="error left-align" id="err-comment">Please enter your comment.</div>
     </div>
   </div>
@@ -26,4 +26,4 @@
       <button id="send-mail" class="message-btn">Send message</button>
     </div>
   </div>
-</form>
+<% end %>

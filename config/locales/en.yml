@@ -63,3 +63,16 @@ en:
   contact_us: Contact Us
   cu_description: Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.
   form_title: Say Hello
+
+  # Newsletter
+  newsletter: Newsletter
+  newsletter_text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+  # placeholder
+  placeholder_name: Enter your name
+  placeholder_email: Enter your email
+  placeholder_comments: Comments...
+
+  # Notice
+  notice_error_occurred: An error occurred
+

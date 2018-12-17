@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181213003535) do
+ActiveRecord::Schema.define(version: 20181215181716) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20181213003535) do
     t.index ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true
   end
 
+  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "fullname"
+    t.string "email"
+    t.string "phone"
+    t.string "addres"
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
+  end
+
   create_table "languages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "language"
     t.integer "position", default: 1
@@ -84,6 +95,14 @@ ActiveRecord::Schema.define(version: 20181213003535) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language"], name: "index_languages_on_language", unique: true
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "customer_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_messages_on_customer_id"
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -171,6 +190,7 @@ ActiveRecord::Schema.define(version: 20181213003535) do
     t.index ["language_id"], name: "index_we_dos_on_language_id"
   end
 
+  add_foreign_key "messages", "customers"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "admin_users"
   add_foreign_key "products", "languages"
