@@ -18,7 +18,7 @@ class Customer < ApplicationRecord
   def self.find_or_create(options={})
     email = options[:email]
     find_or_create_by(email: email) do |customer|
-      customer.fullname = options[:name] || email.cut(/$(.*)@/)
+      customer.fullname = options[:fullname] || email.match(/$(.*)@/)[1]
     end
   end
 end

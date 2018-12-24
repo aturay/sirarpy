@@ -20,7 +20,5 @@
 //= require jquery.cslider
 //= require jquery.placeholder
 //= require jquery.inview
-//= require respond.min
-//require app
 
 //= require welcome
