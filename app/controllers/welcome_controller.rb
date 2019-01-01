@@ -10,5 +10,6 @@ class WelcomeController < ApplicationController
     @skills   = Type.where(language: current_language)
                     .where(published: true)
                     .order(position: :asc)
+    @contact = Contact.where(language: current_language).last
   end
 end

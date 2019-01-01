@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215181716) do
+ActiveRecord::Schema.define(version: 20190101224827) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 20181215181716) do
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true
+  end
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email"
+    t.string "phones"
+    t.bigint "language_id"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_contacts_on_language_id"
   end
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -190,6 +200,7 @@ ActiveRecord::Schema.define(version: 20181215181716) do
     t.index ["language_id"], name: "index_we_dos_on_language_id"
   end
 
+  add_foreign_key "contacts", "languages"
   add_foreign_key "messages", "customers"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "admin_users"

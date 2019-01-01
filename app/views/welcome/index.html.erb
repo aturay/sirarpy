@@ -440,21 +440,22 @@
         </div>
         <div class="container">
             <div class="span9 center contact-info">
-                <p>123 Fifth Avenue, 12th,Belgrade,SRB 11000</p>
-                <p class="info-mail">ourstudio@somemail.com</p>
-                <p>+11 234 567 890</p>
-                <p>+11 286 543 850</p>
-                <div class="title">
-                    <h3>We Are Social</h3>
-                </div>
+              <p><%= @contact.address %></p>
+              <p class="info-mail"><%= @contact.email %></p>
+              <% @contact.phones.split(',').each do |phone| %>
+                <p><%= phone.strip %></p>
+               <% end %>
+              <div class="title">
+                <h3><%= t :we_are_social%></h3>
+              </div>
             </div>
             <div class="row-fluid centered">
                 <ul class="social">
-                    <li>
-                        <a href="">
-                            <span class="icon-facebook-circled"></span>
-                        </a>
-                    </li>
+                  <li>
+                    <a href="">
+                      <span class="icon-facebook-circled"></span>
+                    </a>
+                  </li>
                     <li>
                         <a href="">
                             <span class="icon-twitter-circled"></span>

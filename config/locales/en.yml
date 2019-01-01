@@ -63,7 +63,7 @@ en:
   contact_us: Contact Us
   cu_description: Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.
   form_title: Say Hello
-
+  phones_input_hint: For more than one, it is separated by a comma.
   # Newsletter
   newsletter: Newsletter
   newsletter_text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -76,3 +76,5 @@ en:
   # Notice
   notice_error_occurred: An error occurred
 
+  # We Are  Social
+  we_are_social: We Are Social

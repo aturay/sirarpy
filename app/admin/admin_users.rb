@@ -28,6 +28,7 @@ ActiveAdmin.register AdminUser do
     column :picture do |obj|
       image_tag obj.picture(:thumb), width: 52
     end
+    column :role
     column :staff
     column :email
     column :current_sign_in_at
@@ -38,8 +39,7 @@ ActiveAdmin.register AdminUser do
 
   filter :email
   filter :staff
-  filter :current_sign_in_at
-  filter :sign_in_count
+  filter :role, as: :select
   filter :created_at
 
   form do |f|
@@ -51,6 +51,7 @@ ActiveAdmin.register AdminUser do
       f.input :phone
       f.input :social_url
       f.input :staff
+      f.input :role
       f.input :picture, hint: image_tag(f.object.picture(:thumb), width: 52).html_safe
       f.input :password, input_html: {required: true}
       f.input :password_confirmation, input_html: {required: true}
