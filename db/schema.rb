@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190102001516) do
+ActiveRecord::Schema.define(version: 20190102153649) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -95,6 +95,11 @@ ActiveRecord::Schema.define(version: 20190102001516) do
     t.string "ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.boolean "published", default: false
     t.index ["email"], name: "index_customers_on_email", unique: true
   end
 
@@ -112,6 +117,7 @@ ActiveRecord::Schema.define(version: 20190102001516) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "published", default: false
     t.index ["customer_id"], name: "index_messages_on_customer_id"
   end
 

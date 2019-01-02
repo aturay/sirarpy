@@ -13,5 +13,7 @@ class WelcomeController < ApplicationController
     @contact = Contact.where(language: current_language).last
     @socials = Social.where(published: true)
                      .order(position: :asc)
+    @feedbacks = Message.joins(:customer).where(published: true)
+    @customers = Customer.where(published: true).limit 20
   end
 end

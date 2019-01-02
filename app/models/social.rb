@@ -3,8 +3,7 @@
 # Table name: socials
 #
 #  id         :bigint(8)        not null, primary key
-#  title      :integer
-#  css_icon   :string(255)
+#  title      :integer          default("icon-facebook-circled")
 #  url        :string(255)
 #  published  :boolean          default(TRUE)
 #  position   :integer          default(1)
