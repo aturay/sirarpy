@@ -11,5 +11,7 @@ class WelcomeController < ApplicationController
                     .where(published: true)
                     .order(position: :asc)
     @contact = Contact.where(language: current_language).last
+    @socials = Social.where(published: true)
+                     .order(position: :asc)
   end
 end

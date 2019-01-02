@@ -1,6 +1,8 @@
 ActiveAdmin.register Contact do
   permit_params :email, :phones, :language_id, :address
 
+  actions :all, except: [:show]
+
   index do
     selectable_column
     id_column

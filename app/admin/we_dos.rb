@@ -2,6 +2,8 @@ ActiveAdmin.register WeDo do
   # menu parent: 'Settings'
   permit_params :title, :description, :icon, :language_id, :position, :published
 
+  actions :all, except: [:show]
+
   index do
     selectable_column
     id_column
