@@ -21,4 +21,5 @@
 //= require jquery.placeholder
 //= require jquery.inview
 
+//= require lightbox
 //= require welcome
