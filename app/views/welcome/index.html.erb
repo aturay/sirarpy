@@ -273,7 +273,7 @@
       <ul class="row client-slider" id="clint-slider">
         <% @customers.each do |customer| %>
           <li>
-            <%= link_to customer.photo(:origin) do %>
+            <%= link_to customer.photo.url, data: { lightbox: "#{customer.fullname}-o", title: "#{customer.fullname}" } do %>
               <%= image_tag customer.photo(:medium), title: "#{customer.fullname}", alt: "#{customer.fullname}" %>
             <% end %>
           </li>

@@ -19,7 +19,7 @@
  *= require jquery.cslider
  *= require jquery.bxslider
  *= require animate
+ *= require lightbox
  *= require_self
  */
 
-@import 'lightbox';
